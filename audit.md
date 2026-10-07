@@ -1,135 +1,113 @@
-# Python Basic Programs
+print("======================================")
+print("       PYTHON PROGRAMS AUDIT")
+print("======================================")
 
-This repository contains simple Python programs created for learning and practicing basic programming concepts.
+# Student Audit
+print("\n1. STUDENT PROGRAM")
+name = input("Enter student name: ")
+roll_no = input("Enter roll number: ")
+marks = float(input("Enter marks: "))
 
-## 📚 Programs Included
+if 0 <= marks <= 100:
+    print("Student record is VALID.")
+    print("Name:", name)
+    print("Roll Number:", roll_no)
+    print("Marks:", marks)
+else:
+    print("Student record is INVALID. Marks must be between 0 and 100.")
 
-### 1. Student Structure
 
-A simple program that demonstrates how to store and display student information using a Python class.
+# Fibonacci Audit
+print("\n2. FIBONACCI PROGRAM")
+n = int(input("Enter number of Fibonacci terms: "))
 
-**Details included:**
+if n > 0:
+    a = 0
+    b = 1
 
-* Student Name
-* Roll Number
-* Marks
+    print("Fibonacci Series:")
+    for i in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+    print()
+else:
+    print("Invalid input. Number of terms must be greater than 0.")
 
-**Concepts Used:**
 
-* Classes
-* Objects
-* Constructors
-* Instance variables
+# Factorial Audit
+print("\n3. FACTORIAL PROGRAM")
+num = int(input("Enter a number: "))
 
----
+if num >= 0:
+    factorial = 1
 
-### 2. Fibonacci Series
+    for i in range(1, num + 1):
+        factorial *= i
 
-A program to generate the Fibonacci series for a given number of terms.
+    print("Factorial of", num, "=", factorial)
+else:
+    print("Factorial is not defined for negative numbers.")
 
-The Fibonacci series starts with:
 
-```text
-0 1 1 2 3 5 8 13 21 ...
-```
+# Armstrong Audit
+print("\n4. ARMSTRONG PROGRAM")
+num = int(input("Enter a number: "))
 
-Each number is obtained by adding the previous two numbers.
+if num >= 0:
+    temp = num
+    digits = len(str(num))
+    total = 0
 
-**Concepts Used:**
+    while temp > 0:
+        digit = temp % 10
+        total += digit ** digits
+        temp //= 10
 
-* Variables
-* `for` loop
-* User input
-* Arithmetic operations
+    if total == num:
+        print(num, "is an Armstrong number.")
+    else:
+        print(num, "is not an Armstrong number.")
+else:
+    print("Please enter a non-negative number.")
 
----
 
-### 3. Factorial
+# Prime Audit
+print("\n5. PRIME PROGRAM")
+num = int(input("Enter a number: "))
 
-A program to calculate the factorial of a given number.
+if num <= 1:
+    print(num, "is not a prime number.")
+else:
+    is_prime = True
 
-For example:
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
 
-```text
-5! = 5 × 4 × 3 × 2 × 1 = 120
-```
+    if is_prime:
+        print(num, "is a prime number.")
+    else:
+        print(num, "is not a prime number.")
 
-**Concepts Used:**
 
-* Variables
-* Loops
-* User input
-* Arithmetic operations
+# Pronic Audit
+print("\n6. PRONIC PROGRAM")
+num = int(input("Enter a number: "))
 
----
+is_pronic = False
 
-### 4. Audit
+for i in range(num + 1):
+    if i * (i + 1) == num:
+        is_pronic = True
+        break
 
-A simple audit program for checking and displaying records or performing basic validation of data.
+if is_pronic:
+    print(num, "is a Pronic number.")
+else:
+    print(num, "is not a Pronic number.")
 
-**Concepts Used:**
 
-* Variables
-* Conditional statements
-* Loops
-* User input
-* Data validation
-
----
-
-## 🛠️ Technologies Used
-
-* **Python 3**
-
-## 📁 Repository Structure
-
-```text
-Python-Basic-Programs/
-│
-├── student.py
-├── fibonacci.py
-├── factorial.py
-├── audit.py
-└── README.md
-```
-
-## ▶️ How to Run
-
-Make sure Python 3 is installed on your system.
-
-Run any program using:
-
-```bash
-python student.py
-```
-
-```bash
-python fibonacci.py
-```
-
-```bash
-python factorial.py
-```
-
-```bash
-python audit.py
-```
-
-## 🎯 Purpose
-
-The purpose of this repository is to practice fundamental Python programming concepts and build a strong foundation in programming.
-
-These programs are useful for beginners learning:
-
-* Basic Python syntax
-* Classes and objects
-* Loops
-* Conditional statements
-* User input
-* Basic problem solving
-
-## 👨‍💻 Author
-
-**Your Name**
-
-Feel free to use, modify, and improve these programs for learning purposes.
+print("\n======================================")
+print("          AUDIT COMPLETED")
+print("======================================")
